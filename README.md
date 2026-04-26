@@ -1,11 +1,3 @@
-# Quiz Platform · Spring Boot + Vue 3 (Full-Stack Monorepo)
-
-> **Full-stack monorepo: Spring Boot quiz question bank API (MongoDB) + Vue 3 quiz frontend.**
-
-**Monorepo layout:** `./` = Spring Boot backend · `frontend/` = Vue 3 Vidar quiz UI
-
----
-
 # QuizBackend · Spring Boot Quiz Question Bank API
 
 > **A minimal Spring Boot REST API serving quiz questions from MongoDB — clean layered architecture with repository pattern.**
