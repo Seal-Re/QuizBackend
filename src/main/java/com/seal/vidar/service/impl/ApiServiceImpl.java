@@ -1,12 +1,9 @@
 package com.seal.vidar.service.impl;
 
-import com.seal.vidar.entity.bo.Questions;
 import com.seal.vidar.entity.dao.QuestionDao;
 import com.seal.vidar.entity.dto.QuestionsDto;
 import com.seal.vidar.repository.QuestionRepository;
 import com.seal.vidar.service.ApiService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +12,6 @@ import java.util.List;
 @Service
 public class ApiServiceImpl implements ApiService {
 
-    @Autowired
     private final QuestionRepository questionRepository;
 
     public ApiServiceImpl(QuestionRepository questionRepository) {
@@ -24,13 +20,8 @@ public class ApiServiceImpl implements ApiService {
 
     public ResponseEntity<QuestionsDto> getQuestions() {
         List<QuestionDao> questionDaos = questionRepository.findAll();
-
         QuestionsDto questions = new QuestionsDto();
-
-        System.out.println(questionDaos);
-        /*
         questions.setQuestionList(questionDaos);
-*/
         return ResponseEntity.ok(questions);
     }
 }
