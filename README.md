@@ -1,8 +1,8 @@
-# QuizBackend · Spring Boot Quiz Question Bank API
+# QuizPlatform · Spring Boot + Vue 3 Quiz Full-Stack
 
-> **A minimal Spring Boot REST API serving quiz questions from MongoDB — clean layered architecture with repository pattern.**
+> **Full-stack quiz platform — Spring Boot REST API serving questions from MongoDB + Vue 3 frontend in `frontend/`. Clean layered backend, repository pattern.**
 >
-> 基于 Spring Boot + MongoDB 的题库 REST API，仓储模式分层，为 QuizFrontend 提供题目数据服务。
+> 全栈题库平台：Spring Boot + MongoDB 后端 + Vue 3 前端 (`frontend/`)，仓储模式分层，BO/DTO 隔离存储层与 API 契约。
 
 [English](#english) · [中文](#中文)
 
@@ -19,8 +19,8 @@
 
 ```mermaid
 flowchart LR
-    Frontend["QuizFrontend\n(Vue 3)"] -->|GET /api/questions| ApiController
-    subgraph QuizBackend["QuizBackend (Spring Boot)"]
+    Frontend["frontend/\n(Vue 3)"] -->|GET /api/questions| ApiController
+    subgraph QuizBackend["Spring Boot Backend"]
         ApiController --> ApiService
         ApiService --> ApiServiceImpl
         ApiServiceImpl --> QuestionRepository
@@ -31,9 +31,13 @@ flowchart LR
 ## Quickstart
 
 ```bash
+# Backend
 # 1. Start MongoDB (local or Atlas)
 # 2. Configure application.properties
 mvn spring-boot:run
+
+# Frontend (Vue 3)
+cd frontend && npm install && npm run dev
 ```
 
 ### Config (`src/main/resources/application.properties`)
